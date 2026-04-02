@@ -1,0 +1,20 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+int main() {
+    setlocale(LC_ALL, "Russian");
+    int nums;
+    long long result = 0;
+    int t = 0;
+    cout << "Введите десятичное число" << "" << endl;
+    cin >> nums;
+    int i = 0;
+
+    while (nums > 0) {
+        t = nums % 2;
+        result += t * pow(10, i);
+        nums /= 2;
+        i++;
+    }
+    cout << result;
+}
