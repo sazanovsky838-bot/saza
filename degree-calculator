@@ -1,0 +1,20 @@
+#include <iostream>
+#include <cmath>
+#include <windows.h>
+using namespace std; 
+
+int main() {
+  SetConsoleCP(1251);
+  SetConsoleOutputCP(1251);
+  int degree; 
+  int number; 
+  cout << "Введите степень" << endl; 
+  cin >> degree; 
+
+  cout << "Введите число, которое будете возводить в степень" << endl; 
+  cin >> number; 
+
+  long long deg_numb = abs(pow(number, degree));
+  cout << "Ваше число: " << deg_numb;
+
+}
