@@ -1,0 +1,161 @@
+#include <iostream>
+#include <string>
+#include <io.h>
+#include <fcntl.h>
+using namespace std;
+
+class libary {
+public:
+    wstring word;
+    wchar_t volwess[20] = {
+       L'А', L'а', L'У', L'у', L'О', L'о',
+       L'И', L'и', L'Э', L'э', L'Ы', L'ы',
+       L'Я', L'я', L'Ю', L'ю', L'Е', L'е', L'Ё', L'ё'
+    };
+
+    wchar_t consonant[42] = {
+        L'Б', L'В', L'Г', L'Д', L'Ж', L'З', L'Й', L'К', L'Л', L'М', L'Н',
+        L'П', L'Р', L'С', L'Т', L'Ф', L'Х', L'Ц', L'Ч', L'Ш', L'Щ',
+        L'б', L'в', L'г', L'д', L'ж', L'з', L'й', L'к', L'л', L'м', L'н',
+        L'п', L'р', L'с', L'т', L'ф', L'х', L'ц', L'ч', L'ш', L'щ'
+    };
+
+    void user_info() {
+        wcout << L"Введите слово";
+        wcin >> word;
+    }
+
+    void findmatches() {
+
+        int vowelCount = 0;
+        int consonantCount = 0;
+
+        wcout << L"Результат поиска в слове  " << word << endl;
+
+        for (wchar_t c : word) {
+            bool isVowel = false;
+            bool isConsonant = false;
+
+            for (int i = 0; i < 20; i++) {
+                if (volwess[i] == c) {
+                    isVowel = true;
+                    break;
+                }
+            }
+
+            for (int i = 0; i < 42; i++) {
+                if (consonant[i] == c) {
+                    isConsonant = true;
+                    break;
+                }
+            }
+
+            if (isVowel) {
+                wcout << L"Гласная: " << c << endl;
+                vowelCount++;
+            }
+            else if (isConsonant) {
+                wcout << L"Согласная: " << c << endl;
+                consonantCount++;
+            }
+            else {
+                wcout << L"Неизвестный символ: " << c << endl;
+            }
+        }
+
+        wcout << L"Гласных: " << vowelCount << endl;
+        wcout << L"Согласных: " << consonantCount << endl;
+    }
+       
+
+        
+};
+
+
+int main() {
+    _setmode(_fileno(stdin), _O_U16TEXT);   
+    _setmode(_fileno(stdout), _O_U16TEXT);  
+    libary dictionary;
+    dictionary.user_info();
+    dictionary.findmatches();
+   }#include <iostream>
+#include <string>
+#include <io.h>
+#include <fcntl.h>
+using namespace std;
+
+class libary {
+public:
+    wstring word;
+    wchar_t volwess[20] = {
+       L'А', L'а', L'У', L'у', L'О', L'о',
+       L'И', L'и', L'Э', L'э', L'Ы', L'ы',
+       L'Я', L'я', L'Ю', L'ю', L'Е', L'е', L'Ё', L'ё'
+    };
+
+    wchar_t consonant[42] = {
+        L'Б', L'В', L'Г', L'Д', L'Ж', L'З', L'Й', L'К', L'Л', L'М', L'Н',
+        L'П', L'Р', L'С', L'Т', L'Ф', L'Х', L'Ц', L'Ч', L'Ш', L'Щ',
+        L'б', L'в', L'г', L'д', L'ж', L'з', L'й', L'к', L'л', L'м', L'н',
+        L'п', L'р', L'с', L'т', L'ф', L'х', L'ц', L'ч', L'ш', L'щ'
+    };
+
+    void user_info() {
+        wcout << L"Введите слово";
+        wcin >> word;
+    }
+
+    void findmatches() {
+
+        int vowelCount = 0;
+        int consonantCount = 0;
+
+        wcout << L"Результат поиска в слове  " << word << endl;
+
+        for (wchar_t c : word) {
+            bool isVowel = false;
+            bool isConsonant = false;
+
+            for (int i = 0; i < 20; i++) {
+                if (volwess[i] == c) {
+                    isVowel = true;
+                    break;
+                }
+            }
+
+            for (int i = 0; i < 42; i++) {
+                if (consonant[i] == c) {
+                    isConsonant = true;
+                    break;
+                }
+            }
+
+            if (isVowel) {
+                wcout << L"Гласная: " << c << endl;
+                vowelCount++;
+            }
+            else if (isConsonant) {
+                wcout << L"Согласная: " << c << endl;
+                consonantCount++;
+            }
+            else {
+                wcout << L"Неизвестный символ: " << c << endl;
+            }
+        }
+
+        wcout << L"Гласных: " << vowelCount << endl;
+        wcout << L"Согласных: " << consonantCount << endl;
+    }
+       
+
+        
+};
+
+
+int main() {
+    _setmode(_fileno(stdin), _O_U16TEXT);   
+    _setmode(_fileno(stdout), _O_U16TEXT);  
+    libary dictionary;
+    dictionary.user_info();
+    dictionary.findmatches();
+   }
